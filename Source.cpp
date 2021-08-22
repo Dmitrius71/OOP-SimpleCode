@@ -3,7 +3,7 @@
 
 using namespace std;
 
-/* Модификаторы доступа*/ // 
+/* Геттеры Сеттеры*/ // 
 
 class Human    // Класс Человек 
 {
@@ -27,14 +27,50 @@ class Point
 protected: /*Для дочернего класса будет как public*/   /* Модификаторы доступа*/
 
 private:         /*Скрыто для всех*/   /* Модификаторы доступа*/	
-	int z;
-public:          /*Открыто для всех*/  /* Модификаторы доступа*/
-	int x;
-	int y;
+	int z{};
+	int x{};
+	int y{};
+
+public:             /*Открыто для всех*/  /* Модификаторы доступа*/
+
+	/*GET - получить */
+	/*SET - присвоить */
+
+	int GetX()       /* Получаем значение х*/
+	{
+		return x;
+	}
+
+	void SetX(int x)  /*Принимаем переменную х */
+	{
+		this->x = x;
+	}
+
+	int GetY()
+	{
+		return y;
+	} 
+
+	void SetY(int y)  /*Принимаем переменную y */
+	{
+		this->y = y;
+	}
+
+	int GetZ()
+	{
+		return z;
+	}
+
+	void SetZ(int z)  /*Принимаем переменную z */
+	{
+		this->z = z;
+	}
+
+
 	              /*Поля и методы могут быть и прайвет и паблик и протектед*/
 	void Print()  
 	{
-		cout << "x= " << x << "\ny= " << y << "\nz= " << z;
+		cout << "\nx = " << x << "\ny= " << y << "\nz= " << z;
 	}
 
 
@@ -54,7 +90,10 @@ int main()
 
 	Point a;
 	a.Print();
-
+	a.SetX(5);
+	a.SetY(10);
+	a.SetZ(15);
+	a.Print();
 
 
 	return 0;
